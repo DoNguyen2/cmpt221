@@ -20,11 +20,11 @@ db = SQLAlchemy(app)
 
 # this import is here because we need to initialize db before importing it into
 # the classes
-from db.schema.course import Course
+from database.schema.course import Course
 # uncomment the line below after creating the professor class
-# from db.schema.professor import Professor
+from database.schema.professor import Professor
 # uncomment the line below after reviewing the assoc table
-# from db.schema.assoc import ProfessorCourse
+from database.schema.assoc import ProfessorCourse
 
 # verify the db connection is successful
 with app.app_context():
