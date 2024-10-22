@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Lab 6 Log In</title>
-        <link rel="stylesheet" href="/static/style.css">
-    </head>
-    <body>
-        <h1>Log In</h1>
-        <div>
-        <!-- Create a log in form here -->
+  <head>
+    <title>Lab 6 Log In</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Log In</h1>
+    <div>
+      <!-- Create a log in form here -->
+      <form method="POST">
+        <label for="Email">User's email:</label>
+        <input type="email" id="Email" name="Email" value="" required />
 
-        </div>
-        
-        <br>
-        <a href="/">
-            <button type="button" id="home">Home</button>
-        </a>
-    </body>
+        <br />
+
+        <label for="Password">Password:</label>
+        <input
+          type="password"
+          id="Password"
+          name="Password"
+          value=""
+          required
+        />
+
+        <br />
+
+        <button type="Submit" id="Sign In">Sign In</button>
+
+        <br />
+        {% if error %}
+        <p style="color: red">{{error}}</p>
+        {% endif %}
+      </form>
+    </div>
+
+    <br />
+    <a href="/">
+      <button type="button" id="home">Home</button>
+    </a>
+  </body>
 </html>
