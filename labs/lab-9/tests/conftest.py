@@ -43,3 +43,38 @@ def sample_signup_input():
             'PhoneNumber': '1234567891', 
             'Password': 'mypassword'
             }
+
+# Log in with correct Email and password:
+@pytest.fixture
+def successful_login_input():
+    return {
+        'Email': 'calista.phippen1@marist.edu',
+        'Password': 'mypassword'  # Plain-text password
+    }
+
+# Log in with wrong password:
+@pytest.fixture
+def fail_login_input():
+    return {
+        'Email': 'calista.phippen1@marist.edu',
+        'Password': '123' 
+    }
+
+# Sign up but miss information Email:
+@pytest.fixture
+def missing_signup_input():
+    return {'FirstName': 'Calista', 
+            'LastName': 'Phippen', 
+            'PhoneNumber': '1234567891', 
+            'Password': 'mypassword'
+            }
+
+# Sign up but wrong type phone number:
+@pytest.fixture
+def wrong_type_signup_input():
+    return {'FirstName': 'Calista', 
+            'LastName': 'Phippen', 
+            'Email': 'calista.phippen1@marist.edu', 
+            'PhoneNumber': 'abcd1234', 
+            'Password': 'mypassword'
+            }
